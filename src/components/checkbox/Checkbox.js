@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
 const StyledCheckbox = styled.input`
     font-size: 20px;
+    margin: 15px;
   `;
 
-const StyledLabel = styled.label`
-  margin: 10px;
+const Label = styled.label`
+margin: 10px;
 `;
 
 class Checkbox extends Component {
@@ -14,7 +14,7 @@ class Checkbox extends Component {
 
         return(
             <div>
-            <StyledLabel>Checkbox</StyledLabel>
+            <Label>Checkbox</Label>
             <StyledCheckbox type="checkbox"></StyledCheckbox>
             </div>
         )
