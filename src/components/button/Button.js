@@ -20,6 +20,7 @@ class Button extends Component {
             <div>
             <StyledButton
             disabled={disabled}
+            style={{ border: 'blue' }}
             > Button </StyledButton>
             <Label style={{ display: labeldisplay }}>{title}</Label>
             </div>

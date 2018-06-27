@@ -8,6 +8,8 @@ const StyledInput = styled.input`
   border: none;
   border-radius: 3px;
   margin: 15px;
+  width: 20vw;
+  height: 4vh;
 `
 
 const Label = styled.label`
@@ -16,11 +18,14 @@ margin: 8px;
 
 class Input extends Component {
     render() {
+        const { title, placeholder,hasError, disabled, value } = this.props;
         return(
         <div>
-            <StyledInput placeholder="username" type="text" />
-            <StyledInput type="password" placeholder="password"/>
-            <Label></Label>
+            <StyledInput
+            placeholder={placeholder} 
+            hasError={hasError}
+            disabled={disabled}/>
+            <Label>{title}</Label>
         </div>
         )
     }
