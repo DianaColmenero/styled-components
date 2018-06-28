@@ -10,22 +10,24 @@ const StyledInput = styled.input`
   margin: 15px;
   width: 20vw;
   height: 4vh;
+  font-size: 0.8em;
 `
 
 const Label = styled.label`
-margin: 8px;
+margin: 10px 15px;
 `
 
 class Input extends Component {
     render() {
-        const { title, placeholder,hasError, disabled, value } = this.props;
+        const { hasError, title, placeholder, disabled, labeldisplay, value } = this.props;
         return(
         <div>
             <StyledInput
-            placeholder={placeholder} 
-            hasError={hasError}
+            style={{ borderColor: hasError !== true ? 'black' : 'red'}}
+            placeholder={placeholder}
+            value={value}
             disabled={disabled}/>
-            <Label>{title}</Label>
+            <Label style={{ display: labeldisplay, color: hasError !== true ? 'black' : 'red' }}>{title}</Label>
         </div>
         )
     }

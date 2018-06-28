@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledButton = styled.button`
 height: 6vh;
-font-size: 0.7rem;
+font-size: 0.9rem;
 width: 10vw;
 border-radius: 8px;
 display: inline-block;
@@ -15,14 +15,14 @@ margin: 10px 15px;
 
 class Button extends Component {
     render() {
-        const { disabled, labeldisplay, title } = this.props;
+        const { hasError, disabled, labeldisplay, title } = this.props;
         return(
             <div>
             <StyledButton
             disabled={disabled}
-            style={{ border: 'blue' }}
+            style={{ borderColor: hasError !== true ? 'gray' : 'red'}}
             > Button </StyledButton>
-            <Label style={{ display: labeldisplay }}>{title}</Label>
+            <Label style={{ display: labeldisplay, color: hasError !== true ? 'black' : 'red' }}>{title}</Label>
             </div>
         )
     }

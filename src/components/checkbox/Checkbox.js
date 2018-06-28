@@ -6,16 +6,19 @@ const StyledCheckbox = styled.input`
   `;
 
 const Label = styled.label`
-margin: 10px;
+margin: 10px 15px;;
 `;
 
 class Checkbox extends Component {
     render() {
-
+        const { hasError, disabled, labeldisplay, title } = this.props;
         return(
             <div>
-            <Label>Checkbox</Label>
-            <StyledCheckbox type="checkbox"></StyledCheckbox>
+            <StyledCheckbox type="checkbox"
+            style={{ borderColor: hasError !== true ? 'gray' : 'red'}}
+            disabled={disabled}
+            ></StyledCheckbox>
+            <Label style={{ display: labeldisplay }}>{title}</Label>
             </div>
         )
     }

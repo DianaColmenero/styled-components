@@ -10,7 +10,7 @@ margin: 4px;
 `
 
 const Label = styled.label`
-margin: 4px;
+margin: 10px 15px;
 `
 
 class RadioButton extends Component {
