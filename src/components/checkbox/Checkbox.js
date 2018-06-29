@@ -5,20 +5,27 @@ const StyledCheckbox = styled.input`
     margin: 15px;
   `;
 
-const Label = styled.label`
-margin: 10px 15px;;
-`;
+  const Label = styled.label`
+  margin: 5px 15px;
+  font-size: 0.8rem;
+  `
+  
+  const Span = styled.span`
+  margin-top: 15px;
+  margin-left: 15px;
+  `
 
 class Checkbox extends Component {
     render() {
         const { hasError, disabled, labeldisplay, title } = this.props;
         return(
             <div>
+               <Span style={{ display: 'block' }}>This is my Checkbox:</Span>
             <StyledCheckbox type="checkbox"
-            style={{ borderColor: hasError !== true ? 'gray' : 'red'}}
             disabled={disabled}
+            style={{ borderColor: hasError !== true ? 'gray' : 'red'}}
             ></StyledCheckbox>
-            <Label style={{ display: labeldisplay }}>{title}</Label>
+            <Label style={{ display: labeldisplay, color: hasError !== true ? 'black' : 'red' }}>{title}</Label>
             </div>
         )
     }

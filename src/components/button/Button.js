@@ -10,7 +10,12 @@ display: inline-block;
 margin: 15px;
 `
 const Label = styled.label`
-margin: 10px 15px;
+margin: 5px 15px;
+font-size: 0.8rem;
+`
+const Span = styled.span`
+margin-top: 15px;
+margin-left: 15px;
 `
 
 class Button extends Component {
@@ -18,6 +23,7 @@ class Button extends Component {
         const { hasError, disabled, labeldisplay, title } = this.props;
         return(
             <div>
+                <Span style={{ display: 'block' }}>This is my button:</Span>
             <StyledButton
             disabled={disabled}
             style={{ borderColor: hasError !== true ? 'gray' : 'red'}}

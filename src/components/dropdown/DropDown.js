@@ -10,14 +10,21 @@ width: 10vw;
 `
 
 const Label = styled.label`
-margin: 10px 15px;
-`
+  margin: 5px 15px;
+  font-size: 0.8rem;
+  `
+  
+  const Span = styled.span`
+  margin-top: 15px;
+  margin-left: 15px;
+  `
 
 class DropDown extends Component{
     render(){
         const { hasError, disabled, labeldisplay, title } = this.props;
         return (
             <div>
+            <Span style={{ display: 'block' }}>This is my Input:</Span>
         <StyledDropdown
         style={{ borderColor: hasError !== true ? 'gray' : 'red'}}
         disabled={disabled}>

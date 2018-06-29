@@ -3,24 +3,29 @@ import styled from 'styled-components';
 
 const StyledRadioButton = styled.input`
 font-size: 30px;
-`
-
-const StyledLabel = styled.label`
-margin: 4px;
+margin: 15px;
 `
 
 const Label = styled.label`
-margin: 10px 15px;
-`
+  margin: 5px 15px;
+  font-size: 0.8rem;
+  `
+  
+  const Span = styled.span`
+  margin-top: 15px;
+  margin-left: 15px;
+  `
 
 class RadioButton extends Component {
     render() {
-
+        const { hasError, disabled, labeldisplay, title } = this.props;
         return(
             <div>
-            <StyledLabel>RadioButton</StyledLabel>
-            <StyledRadioButton type="radio"></StyledRadioButton>
-            <Label></Label>
+                <Span style={{ display: 'block' }}>This is my RadioButton:</Span>
+            <StyledRadioButton type="radio"
+            style={{ borderColor: hasError !== true ? 'gray' : 'red'}}
+            disabled={disabled}></StyledRadioButton>
+            <Label style={{ display: labeldisplay, color: hasError !== true ? 'black' : 'red' }}>{title}</Label>
             </div>
         )
     }
