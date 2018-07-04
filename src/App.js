@@ -1,37 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Button from './components/button/Button.js'
-import Input from './components/input/Input.js'
-import DropDown from './components/dropdown/DropDown.js'
-import Checkbox from './components/checkbox/Checkbox.js'
-import RadioButton from './components/radiobutton/RadioButton.js'
+import { Switch, Route } from 'react-router-dom';
+import Dashboard from './components/dashboard/Dashboard'
+// import AllMyComponents from './components/allMyComponents/AllMyComponents'
+import Form from './components/form/Form'
+import AllMyComponents from './components/allMyComponents/AllMyComponents';
 
 class App extends Component {
   render() {
-    return (
+    return(
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Components</h1>
-        </header>
-      <br/>
-      <div>
-        <Button />
-        <br/>
-        <br/>
-        <Input />
-        <br/>
-        <DropDown />
-        <br/>
-        <Checkbox />
-        <br/>
-        <RadioButton />
+      
+        <Switch>
+        <Route exact path="/" component={Dashboard} />
+        <Route path="/allcomponents" component={AllMyComponents} />
+        <Route path="/form" component={Form} />
+
+        </Switch>
+      
+
 
       </div>
-      </div>
+
     );
   }
 }
+
+
 
 export default App;
