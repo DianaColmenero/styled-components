@@ -28,13 +28,14 @@ class Input extends Component {
         const { hasError, title, placeholder, disabled, labeldisplay, value } = this.props;
         return(
         <div>
-            <Span style={{ display: 'block' }}>This is my Input:</Span>
+            <Span style={{ display: 'inline-block', color: hasError !== true ? 'black' : 'red' }}>{title}</Span>
             <StyledInput
             style={{ borderColor: hasError !== true ? 'black' : 'red'}}
             placeholder={placeholder}
             value={value}
-            disabled={disabled}/>
-            <Label style={{ display: labeldisplay, color: hasError !== true ? 'black' : 'red' }}>{title}</Label>
+            disabled={disabled}
+            />
+            <Label style={{ display: labeldisplay }}></Label>
         </div>
         )
     }
