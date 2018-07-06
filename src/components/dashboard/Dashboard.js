@@ -8,14 +8,14 @@ width: 70%;
 border-radius: 8px;
 border: 1px solid #222;
 background: #111;
-margin: 60px auto;
+margin: 35px auto;
 background-image: linear-gradient(#444, #111);
 `
 
 const Li = styled.li`
 display: inline-block;
 list-style: none;
-width: 30%;
+width: 20%;
 padding: 10px 5px;
 color: #fff;
 margin-top: 10px;
@@ -30,10 +30,11 @@ class Dashboard extends Component {
                     <Li>
                 Inicio</Li>
                 <Li><Link style={{ color: '#fff',
+                textDecoration: 'none' }} to="/allcomponents">My components</Link></Li>
+                <Li><Link style={{ color: '#fff',
                 textDecoration: 'none' }} to="/Form">Form</Link></Li>
                 <Li><Link style={{ color: '#fff',
-                textDecoration: 'none' }} to="/allcomponents">My components</Link></Li>
-            
+                textDecoration: 'none' }} to="/todolist">To do list</Link></Li>
 
                 </Navbar>
 			</div>

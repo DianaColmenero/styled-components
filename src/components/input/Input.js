@@ -11,6 +11,7 @@ const StyledInput = styled.input`
   width: 20vw;
   height: 4vh;
   font-size: 0.8em;
+  display: inline-block;
 `
 
 const Label = styled.label`

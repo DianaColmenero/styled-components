@@ -4,6 +4,7 @@ import Dashboard from './components/dashboard/Dashboard'
 // import AllMyComponents from './components/allMyComponents/AllMyComponents'
 import Form from './components/form/Form'
 import AllMyComponents from './components/allMyComponents/AllMyComponents';
+import ToDoList from './components/todoinput/TodoInput'
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
         <Route exact path="/" component={Dashboard} />
         <Route path="/allcomponents" component={AllMyComponents} />
         <Route path="/form" component={Form} />
+        <Route path="/todolist" component={ToDoList}/>
 
         </Switch>
       

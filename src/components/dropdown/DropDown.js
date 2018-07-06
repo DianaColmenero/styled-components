@@ -24,15 +24,16 @@ class DropDown extends Component{
         const { hasError, disabled, labeldisplay, title } = this.props;
         return (
             <div>
-            <Span style={{ display: 'inline-block' }}>This is my Input:</Span>
+            <Span style={{ display: 'inline-block', color: hasError !== true ? 'black' : 'red' }}>{title}</Span>
         <StyledDropdown
         style={{ borderColor: hasError !== true ? 'gray' : 'red'}}
         disabled={disabled}>
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
+          <option>Sales</option>
+          <option>Help Desk</option>
+          <option>Support</option>
+          <option>Other</option>
         </StyledDropdown>
-        <Label style={{ display: labeldisplay, color: hasError !== true ? 'black' : 'red' }}>{title}</Label>
+        <Label style={{ display: labeldisplay, color: hasError !== true ? 'black' : 'red' }}></Label>
       </div>
            
         )

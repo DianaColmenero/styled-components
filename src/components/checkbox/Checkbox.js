@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+
 const StyledCheckbox = styled.input`
     font-size: 20px;
     margin: 15px;
@@ -20,12 +21,12 @@ class Checkbox extends Component {
         const { hasError, disabled, labeldisplay, title } = this.props;
         return(
             <div>
-               <Span style={{ display: 'block' }}>This is my Checkbox:</Span>
+               <Span style={{ display: 'inlin-block', color: hasError !== true ? 'black' : 'red' }}>{title}</Span>
             <StyledCheckbox type="checkbox"
             disabled={disabled}
             style={{ borderColor: hasError !== true ? 'gray' : 'red'}}
             ></StyledCheckbox>
-            <Label style={{ display: labeldisplay, color: hasError !== true ? 'black' : 'red' }}>{title}</Label>
+            <Label style={{ display: labeldisplay, color: hasError !== true ? 'black' : 'red' }}></Label>
             </div>
         )
     }

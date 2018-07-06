@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
-height: 6vh;
-font-size: 0.9rem;
-width: 10vw;
+height: 5vh;
+font-size: 0.8rem;
+width: 9vw;
 border-radius: 8px;
 display: inline-block;
 margin: 15px;
@@ -23,11 +23,11 @@ class Button extends Component {
         const { hasError, disabled, labeldisplay, title } = this.props;
         return(
             <div>
-                <Span style={{ display: 'block' }}>This is my button:</Span>
+                <Span style={{ display: 'inline-block' }}></Span>
             <StyledButton
             disabled={disabled}
             style={{ borderColor: hasError !== true ? 'gray' : 'red'}}
-            > Button </StyledButton>
+            > {title}</StyledButton>
             <Label style={{ display: labeldisplay, color: hasError !== true ? 'black' : 'red' }}>{title}</Label>
             </div>
         )

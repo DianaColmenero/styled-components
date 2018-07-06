@@ -7,7 +7,7 @@ configure({ adapter: new Adapter() });
 
 describe("having a Input ", () => {
     it('there is a Input', () => {
-        expect(<Input />).toBeDefined();
+        expect(Input).toBeDefined();
       });
 
     it('should render disabled attribute to input', () => {

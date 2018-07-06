@@ -21,7 +21,7 @@ class RadioButton extends Component {
         const { hasError, disabled, labeldisplay, title } = this.props;
         return(
             <div>
-                <Span style={{ display: 'inline-block' }}></Span>
+                <Span style={{ display: 'inline-block', color: hasError !== true ? 'black' : 'red' }}></Span>
             <StyledRadioButton type="radio"
             style={{ borderColor: hasError !== true ? 'gray' : 'red'}}
             disabled={disabled}></StyledRadioButton>
