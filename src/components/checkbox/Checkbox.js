@@ -23,6 +23,7 @@ class Checkbox extends Component {
             <div>
                <Span style={{ display: 'inlin-block', color: hasError !== true ? 'black' : 'red' }}>{title}</Span>
             <StyledCheckbox type="checkbox"
+            onChange={this.props.toggleChange}
             disabled={disabled}
             style={{ borderColor: hasError !== true ? 'gray' : 'red'}}
             ></StyledCheckbox>

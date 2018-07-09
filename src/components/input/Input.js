@@ -31,6 +31,7 @@ class Input extends Component {
         <div>
             <Span style={{ display: 'inline-block', color: hasError !== true ? 'black' : 'red' }}>{title}</Span>
             <StyledInput
+            onChange={this.props.handleChange}
             style={{ borderColor: hasError !== true ? 'black' : 'red'}}
             placeholder={placeholder}
             value={value}

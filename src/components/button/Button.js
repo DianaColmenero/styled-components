@@ -25,6 +25,7 @@ class Button extends Component {
             <div>
                 <Span style={{ display: 'inline-block' }}></Span>
             <StyledButton
+            onClick={this.props.onClick}
             disabled={disabled}
             style={{ borderColor: hasError !== true ? 'gray' : 'red'}}
             > {title}</StyledButton>
