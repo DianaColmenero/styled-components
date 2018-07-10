@@ -21,13 +21,14 @@ class TodoInput extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {value: ' '
-            // todos: [
-            //   {id: 0, text: "do my homework"},
-            //   {id: 1, text: "Learn React"}
-            // ],
-            // nextId: 2
-          };
+        this.state = {value: ' ',
+            todos: [
+              {id: 0, text: "do my homework"},
+              {id: 1, text: "Learn React"}
+            ],
+            nextId: 2
+        };
+        console.log(this.state.todos);
 
         this.handleChange = this.handleChange.bind(this);
         this.addTodo = this.addTodo.bind(this);
@@ -43,22 +44,24 @@ class TodoInput extends Component {
     addTodo(todoText) {
         console.log("PRUB2");
         console.log("todo add: ", todoText);
-        
-    //   if (todo.length > 0) {
-    //     //   this.props.addTodo(todo);
-    //       this.setState({value: ''});
-    //     }
+
+        let todos = this.state.todos.slice();
+        todos.push({id: this.state.nextId, text: todoText});
+        this.setState({
+        todos: todos,
+        nextId: ++this.state.nextId
+
+    });
+    console.log(todos);
+  
       }
 
-    // addTodo(todoText) {
-    //     let todos = this.state.todos.slice();
-    //     todos.push({id: this.state.nextId, text: todoText});
-    //     this.setState({
-    //     todos: todos,
-    //     nextId: ++this.state.nextId
-    // });
-  
-    // }
+    //   unfinishedTasks = event => {
+	// 	let filter = this.state.todos.filter(task => {
+	// 		return task.checked === false;
+	// 	});
+	// 	this.setState({ tasks: filter });
+	// }; 
 
     // removeTodo(id) {
     //     this.setState({
@@ -87,16 +90,17 @@ class TodoInput extends Component {
                 {/* <Button title={'complete'}/>
                 <Button title={'incomplete'}/>
                 <Button title={'all'}/> */}
-            {/* <ul>
+            <ul>
             {
               this.state.todos.map((todo) => {
                 return <TodoItem 
                 todo={todo} key={todo.id} 
                 id={todo.id} 
-                removeTodo={this.removeTodo}/>
+                // removeTodo={this.removeTodo}
+                />
               })
             }
-          </ul> */}
+          </ul>
             </StyCont>
 
             </div>

@@ -38,7 +38,7 @@ class Form extends Component {
 				<Checkbox title={'Bootstrap'}/>
 				<Checkbox title={'jQuery'}/>
 				<Checkbox title={'HTML'}/>
-				<Button/>
+				<Button title={'Add'}/>
 				</StyForm>
 			</Container>
 

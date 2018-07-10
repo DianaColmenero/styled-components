@@ -28,8 +28,8 @@ class Button extends Component {
             onClick={this.props.onClick}
             disabled={disabled}
             style={{ borderColor: hasError !== true ? 'gray' : 'red'}}
-            > {title}</StyledButton>
-            <Label style={{ display: labeldisplay, color: hasError !== true ? 'black' : 'red' }}>{title}</Label>
+            >{title}</StyledButton>
+            <Label style={{ display: labeldisplay, color: hasError !== true ? 'black' : 'red' }}></Label>
             </div>
         )
     }

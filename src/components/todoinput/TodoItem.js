@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import Checkbox from './../checkbox/Checkbox';
 
 class TodoItem extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   removeTodo(id) {
     this.props.removeTodo(id);
@@ -15,7 +15,7 @@ class TodoItem extends Component {
     return (
       <div className="todoWrapper">
         <Checkbox className="removeTodo" 
-        onClick={(e)=> this.removeTodo(this.props.id) }></Checkbox>{this.props.todo.text}
+        ></Checkbox>{this.props.todo.text}
       </div>
     );
   }
