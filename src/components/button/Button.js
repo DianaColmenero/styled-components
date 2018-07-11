@@ -22,14 +22,14 @@ class Button extends Component {
     render() {
         const { hasError, disabled, labeldisplay, title } = this.props;
         return(
-            <div>
-                <Span style={{ display: 'inline-block' }}></Span>
+            <div className="button-wrapper">
+                {/* <Span style={{ display: 'inline-block' }}></Span> */}
             <StyledButton
             onClick={this.props.onClick}
             disabled={disabled}
             style={{ borderColor: hasError !== true ? 'gray' : 'red'}}
             >{title}</StyledButton>
-            <Label style={{ display: labeldisplay, color: hasError !== true ? 'black' : 'red' }}></Label>
+            {/* <Label style={{ display: labeldisplay, color: hasError !== true ? 'black' : 'red' }}></Label> */}
             </div>
         )
     }

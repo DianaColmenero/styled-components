@@ -29,7 +29,7 @@ class Input extends Component {
         const { hasError, title, placeholder, disabled, labeldisplay, value } = this.props;
         return(
         <div>
-            <Span style={{ display: 'inline-block', color: hasError !== true ? 'black' : 'red' }}>{title}</Span>
+            {/* <Span style={{ display: 'inline-block', color: hasError !== true ? 'black' : 'red' }}>{title}</Span> */}
             <StyledInput
             onChange={this.props.handleChange}
             style={{ borderColor: hasError !== true ? 'black' : 'red'}}
@@ -37,7 +37,7 @@ class Input extends Component {
             value={value}
             disabled={disabled}
             />
-            <Label style={{ display: labeldisplay }}></Label>
+            {/* <Label style={{ display: labeldisplay }}></Label> */}
         </div>
         )
     }

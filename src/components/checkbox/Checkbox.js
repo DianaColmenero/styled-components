@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledCheckbox = styled.input`
     font-size: 20px;
-    margin: 15px;
+    margin: 8px;
   `;
 
   const Label = styled.label`
@@ -21,13 +21,13 @@ class Checkbox extends Component {
         const { hasError, disabled, labeldisplay, title } = this.props;
         return(
             <div>
-               <Span style={{ display: 'inlin-block', color: hasError !== true ? 'black' : 'red' }}>{title}</Span>
+               {/* <Span style={{ display: 'inlin-block', color: hasError !== true ? 'black' : 'red' }}>{title}</Span> */}
             <StyledCheckbox type="checkbox"
             onChange={this.props.toggleChange}
             disabled={disabled}
             style={{ borderColor: hasError !== true ? 'gray' : 'red'}}
             ></StyledCheckbox>
-            <Label style={{ display: labeldisplay, color: hasError !== true ? 'black' : 'red' }}></Label>
+            {/* <Label style={{ display: labeldisplay, color: hasError !== true ? 'black' : 'red' }}></Label> */}
             </div>
         )
     }

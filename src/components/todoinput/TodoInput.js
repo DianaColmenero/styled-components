@@ -10,11 +10,26 @@ import TodoItem from './TodoItem';
 
 const StyCont = styled.div`
 width: 50%;
-height: 70vh;
+height: 80vh;
 border: 2px solid black;
 margin: 0 auto;
 border-radius: 8px;
-`
+text-aligne: center;
+`;
+
+const Wrapp = styled.div`
+text-aligne: center;
+width: 50%;
+height: 85%;
+// border: 2px solid red;
+margin: 0 auto;
+`;
+
+const UlWrapp= styled.ul`
+margin: 0;
+list-style-type: none;
+padding-left: 14px;
+`;
 
 
 class TodoInput extends Component {
@@ -56,26 +71,16 @@ class TodoInput extends Component {
   
       }
 
-    //   unfinishedTasks = event => {
-	// 	let filter = this.state.todos.filter(task => {
-	// 		return task.checked === false;
-	// 	});
-	// 	this.setState({ tasks: filter });
-	// }; 
-
-    // removeTodo(id) {
-    //     this.setState({
-    //         todos: this.state.todos.filter((todo, index) => todo.id !== id)
-    //       });
-    //   }
-
     render() {
         return(
             <div>
             <Dashboard />
-            <StyCont>
-            <h2>Todo List</h2>
-                <Input 
+            <StyCont className="StyCont">
+            <h2
+            style={{ textAlign: 'center' }}>Todo List
+            </h2>
+            <Wrapp>
+                <Input  
                 value={this.state.value}
                 handleChange={ this.handleChange }
                 todoText=""
@@ -83,25 +88,27 @@ class TodoInput extends Component {
                 />
 
                 <Button 
-                style={{ borderColor: 'red', display: 'none' }}
+        
                 title={'Add'}
                 onClick={() => this.addTodo(this.state.value)}
                 />
                 {/* <Button title={'complete'}/>
                 <Button title={'incomplete'}/>
                 <Button title={'all'}/> */}
-            <ul>
+            <UlWrapp>
             {
               this.state.todos.map((todo) => {
                 return <TodoItem 
-                todo={todo} key={todo.id} 
+                todo={todo}  
                 id={todo.id} 
+                key={todo.id}
                 // removeTodo={this.removeTodo}
                 />
               })
-            }
-          </ul>
-            </StyCont>
+            }            
+          </UlWrapp>
+          </Wrapp>
+        </StyCont>
 
             </div>
         );

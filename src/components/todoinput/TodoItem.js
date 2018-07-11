@@ -1,6 +1,7 @@
-
 import React, { Component } from 'react';
 import Checkbox from './../checkbox/Checkbox';
+// import Button from '../button/Button';
+import styled from 'styled-components';
 
 class TodoItem extends Component {
   // constructor(props) {
@@ -12,10 +13,11 @@ class TodoItem extends Component {
   }
 
   render() {
+    let _style = "line-through";
     return (
       <div className="todoWrapper">
-        <Checkbox className="removeTodo" 
-        ></Checkbox>{this.props.todo.text}
+        <Checkbox />
+        <span style={{"textDecoration": _style}}>{this.props.todo.text}</span>
       </div>
     );
   }
