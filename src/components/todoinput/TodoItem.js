@@ -1,26 +1,33 @@
-import React, { Component } from 'react';
-import Checkbox from './../checkbox/Checkbox';
-// import Button from '../button/Button';
-import styled from 'styled-components';
+import React, { Component} from 'react';
 
 class TodoItem extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+    constructor() {
+        super();
+        this.state= { done: 'false' };
+    }
 
-  removeTodo(id) {
-    this.props.removeTodo(id);
-  }
 
-  render() {
-    let _style = "line-through";
-    return (
-      <div className="todoWrapper">
-        <Checkbox />
-        <span style={{"textDecoration": _style}}>{this.props.todo.text}</span>
-      </div>
-    );
-  }
+    render () {
+        var todo = this.props.todo;
+        var title = todo.title;
+        var _style = "line-through";
+        if(!this.props.todo.done)
+			_style ="none";
+        return (
+            <div>
+                 <li style={{ listStyle: 'none' }}>
+                        <input type="checkbox"
+                        checked={todo.done}
+                        onChange={this.props.handleDone.bind(null, todo.id)}
+                        />
+                        <span style={{"textDecoration": _style}}>{ todo.title }</span>
+                        <button
+                        onClick={this.props.handleDelete.bind(null, todo.id)}
+                        >X</button>
+                        </li>
+            </div>
+        );
+    }
 }
 
 export default TodoItem;

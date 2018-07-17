@@ -25,7 +25,8 @@ margin-top: 10px;
 class Dashboard extends Component {
 	render() {
 		return (
-			<div>
+			<div className="nav-wrapper"
+            style={{ textAlign: 'center' }}>
                 <Navbar>
                     <Li>
                 Inicio</Li>

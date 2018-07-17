@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Dashboard from '../dashboard/Dashboard';
 import Button from './../button/Button';
-// import Checkbox from './../checkbox/Checkbox';
-// import DropDown from './../dropdown/DropDown';
-// import RadioButton from './../radiobutton/RadioButton';
 import Input from './../input/Input';
-import TodoItem from './TodoItem';
+import TodoList from './TodoList';
 
 const StyCont = styled.div`
 width: 50%;
@@ -25,50 +22,79 @@ height: 85%;
 margin: 0 auto;
 `;
 
-const UlWrapp= styled.ul`
-margin: 0;
-list-style-type: none;
-padding-left: 14px;
-`;
 
+var rand = require('random-key');
 
 class TodoInput extends Component {
-    constructor(props) {
-        super(props);
+    constructor () {
+        super();
+        this.state = { title: '', 
+        todos:[ { title: 'run', done: false, id: 1},
+         {title: 'walk', done: true, id: 2}, 
+         {title: 'swim', done: false, id: 3} 
+        ],
+        backUpTodos:[ { title: 'run', done: false, id: 1},
+         {title: 'walk', done: true, id: 2}, 
+         {title: 'swim', done: false, id: 3} 
+        ],
+    };
+    } 
 
-        this.state = {value: ' ',
-            todos: [
-              {id: 0, text: "do my homework"},
-              {id: 1, text: "Learn React"}
-            ],
-            nextId: 2
-        };
-        console.log(this.state.todos);
-
-        this.handleChange = this.handleChange.bind(this);
-        this.addTodo = this.addTodo.bind(this);
-        // this.addTodo = this.addTodo.bind(this);
-        // this.removeTodo = this.removeTodo.bind(this);
+    handleDone (idMarkedAsDone) {
+        var _todos = this.state.todos;
+        var todo = _todos.filter((todo) => {
+            return todo.id === idMarkedAsDone;
+        })[0];
+    
+        todo.done = !todo.done;
+    
+        this.setState({todos: _todos});
     }
-
+    
+    handleSubmit(e) {
+        e.preventDefault();
+        var title = this.state.title;
+        var newTodos = this.state.todos.concat({ title: title, 
+            id: rand.generate(), done: false });
+        // console.log("submit", title);
+        this.setState({ title: '', todos: newTodos, backUpTodos: newTodos });
+        // console.log(newItems);
+    }
+    
     handleChange(e) {
-        this.setState({value: e.target.value});
-        console.log("change here");
-    }
-
-    addTodo(todoText) {
-        console.log("PRUB2");
-        console.log("todo add: ", todoText);
-
-        let todos = this.state.todos.slice();
-        todos.push({id: this.state.nextId, text: todoText});
-        this.setState({
-        todos: todos,
-        nextId: ++this.state.nextId
-
+        var title = e.target.value;
+        this.setState({ title: title });
+    };
+    
+    handleDelete(idToDelete) {
+    var newTodos = this.state.todos.filter( (todo) => {
+        return todo.id !== idToDelete
+    
     });
-    console.log(todos);
-  
+    
+    this.setState( {todos: newTodos, backUpTodos: newTodos });
+    
+    }
+    
+    allTasks () {
+        // console.log('prueba');
+        var backUpTodos = this.state.todos.slice();
+        // console.log(backUpTodos);
+        backUpTodos.push();
+        this.setState({ todos: this.state.backUpTodos });
+      }
+    
+      completedTasks (e) {
+        // console.log('complete');
+        var backUpTodos = this.state.backUpTodos.filter((todo) => { return todo.done});
+        // console.log(backUpTodos);
+        this.setState({ todos: backUpTodos });
+      }
+    
+      pendingTasks (e) {
+        // console.log('pending');
+        var backUpTodos = this.state.backUpTodos.filter((todo) => { return !todo.done});
+        this.setState({ todos: backUpTodos });
       }
 
     render() {
@@ -77,36 +103,44 @@ class TodoInput extends Component {
             <Dashboard />
             <StyCont className="StyCont">
             <h2
-            style={{ textAlign: 'center' }}>Todo List
-            </h2>
+            style={{ textAlign: 'center' }}>React to-do-list</h2>
             <Wrapp>
+            <form onSubmit={ this.handleSubmit.bind(this)}>
                 <Input  
-                value={this.state.value}
-                handleChange={ this.handleChange }
-                todoText=""
-                addTodo={this.addTodo}
+                type="text"
+                handleChange={ this.handleChange.bind(this)} 
+                value={this.state.title}
                 />
-
-                <Button 
-        
+                <Button
                 title={'Add'}
-                onClick={() => this.addTodo(this.state.value)}
                 />
-                {/* <Button title={'complete'}/>
-                <Button title={'incomplete'}/>
-                <Button title={'all'}/> */}
-            <UlWrapp>
-            {
-              this.state.todos.map((todo) => {
-                return <TodoItem 
-                todo={todo}  
-                id={todo.id} 
-                key={todo.id}
-                // removeTodo={this.removeTodo}
+            </form>
+
+            <TodoList 
+                handleDone={this.handleDone.bind(this)}
+                todos={this.state.todos}
+                handleDelete={this.handleDelete.bind(this)}
                 />
-              })
-            }            
-          </UlWrapp>
+            
+            <Button title={'all tasks'}
+            style={{ display: 'inline-block' }}
+            onClick={this.allTasks.bind(this)}
+            />
+            <Button title={'complete tasks'}
+            style={{ display: 'inline-block' }}
+            onClick={this.completedTasks.bind(this)}
+            />
+            <Button title={'pending tasks'}
+            style={{ display: 'inline-block' }}
+            onClick={this.pendingTasks.bind(this)}
+            />
+            <br/>
+            <br/>
+                    
+            All: ({this.state.todos.length})
+            Completed: ({this.state.todos.filter((todo) => { return todo.done }).length})
+            Incomplete:({this.state.todos.filter((todo) => { return !todo.done }).length})
+                
           </Wrapp>
         </StyCont>
 

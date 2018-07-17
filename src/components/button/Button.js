@@ -22,7 +22,8 @@ class Button extends Component {
     render() {
         const { hasError, disabled, labeldisplay, title } = this.props;
         return(
-            <div className="button-wrapper">
+            <div className="button-wrapper"
+            style={{ display: 'inline-block' }}>
                 {/* <Span style={{ display: 'inline-block' }}></Span> */}
             <StyledButton
             onClick={this.props.onClick}

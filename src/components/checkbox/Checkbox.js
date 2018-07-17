@@ -20,12 +20,14 @@ class Checkbox extends Component {
     render() {
         const { hasError, disabled, labeldisplay, title } = this.props;
         return(
-            <div>
+            <div className="check-wrapper"
+            style={{ display: 'inline-block' }}>
                {/* <Span style={{ display: 'inlin-block', color: hasError !== true ? 'black' : 'red' }}>{title}</Span> */}
             <StyledCheckbox type="checkbox"
             onChange={this.props.toggleChange}
             disabled={disabled}
             style={{ borderColor: hasError !== true ? 'gray' : 'red'}}
+            // checked={checked}
             ></StyledCheckbox>
             {/* <Label style={{ display: labeldisplay, color: hasError !== true ? 'black' : 'red' }}></Label> */}
             </div>

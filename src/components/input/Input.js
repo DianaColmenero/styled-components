@@ -26,15 +26,15 @@ margin-left: 15px;
 
 class Input extends Component {
     render() {
-        const { hasError, title, placeholder, disabled, labeldisplay, value } = this.props;
+        const { hasError, title, placeholder, disabled,handleChange, labeldisplay, value } = this.props;
         return(
         <div>
             {/* <Span style={{ display: 'inline-block', color: hasError !== true ? 'black' : 'red' }}>{title}</Span> */}
             <StyledInput
-            onChange={this.props.handleChange}
+            onChange={handleChange}
             style={{ borderColor: hasError !== true ? 'black' : 'red'}}
             placeholder={placeholder}
-            value={value}
+            // value={title}
             disabled={disabled}
             />
             {/* <Label style={{ display: labeldisplay }}></Label> */}
