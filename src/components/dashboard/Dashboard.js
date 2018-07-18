@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = styled.div`
 height: 7vh;
-width: 70%;
+width: 75%;
 border-radius: 8px;
 border: 1px solid #222;
 background: #111;
@@ -15,7 +15,7 @@ background-image: linear-gradient(#444, #111);
 const Li = styled.li`
 display: inline-block;
 list-style: none;
-width: 20%;
+width: 18%;
 padding: 10px 5px;
 color: #fff;
 margin-top: 10px;
@@ -36,6 +36,8 @@ class Dashboard extends Component {
                 textDecoration: 'none' }} to="/Form">Form</Link></Li>
                 <Li><Link style={{ color: '#fff',
                 textDecoration: 'none' }} to="/todolist">To do list</Link></Li>
+                <Li><Link style={{ color: '#fff',
+                textDecoration: 'none' }} to="/Facebook">Facebook</Link></Li>
 
                 </Navbar>
 			</div>

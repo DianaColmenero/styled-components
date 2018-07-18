@@ -5,6 +5,7 @@ import Dashboard from './components/dashboard/Dashboard'
 import Form from './components/form/Form'
 import AllMyComponents from './components/allMyComponents/AllMyComponents';
 import TodoInput from './components/todoinput/TodoInput'
+import LoginFb from './components/facebook/LoginFb';
 
 class App extends Component {
   render() {
@@ -16,7 +17,7 @@ class App extends Component {
         <Route path="/allcomponents" component={AllMyComponents} />
         <Route path="/form" component={Form} />
         <Route path="/todolist" component={TodoInput}/>
-
+        <Route path="/facebook" component={LoginFb}/>
         </Switch>
       
 

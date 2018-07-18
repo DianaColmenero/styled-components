@@ -34,7 +34,7 @@ class Input extends Component {
             onChange={handleChange}
             style={{ borderColor: hasError !== true ? 'black' : 'red'}}
             placeholder={placeholder}
-            // value={title}
+            value={this.props.handleSubmit}
             disabled={disabled}
             />
             {/* <Label style={{ display: labeldisplay }}></Label> */}
