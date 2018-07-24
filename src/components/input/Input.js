@@ -14,19 +14,23 @@ const StyledInput = styled.input`
   display: inline-block;
 `
 
-const Label = styled.label`
-margin: 5px 15px;
-font-size: 0.8rem;
-`
+// const Label = styled.label`
+// margin: 5px 15px;
+// font-size: 0.8rem;
+// `
 
-const Span = styled.span`
-margin-top: 15px;
-margin-left: 15px;
-`
+// const Span = styled.span`
+// margin-top: 15px;
+// margin-left: 15px;
+// `
 
 class Input extends Component {
     render() {
-        const { hasError, title, placeholder, disabled,handleChange, labeldisplay, value } = this.props;
+        const { hasError, 
+            // title, 
+            placeholder, disabled,handleChange, 
+            // labeldisplay, value 
+        } = this.props;
         return(
         <div>
             {/* <Span style={{ display: 'inline-block', color: hasError !== true ? 'black' : 'red' }}>{title}</Span> */}

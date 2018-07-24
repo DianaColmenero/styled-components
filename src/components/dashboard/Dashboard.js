@@ -7,7 +7,6 @@ height: 7vh;
 width: 75%;
 border-radius: 8px;
 border: 1px solid #222;
-background: #111;
 margin: 35px auto;
 background-image: linear-gradient(#444, #111);
 `

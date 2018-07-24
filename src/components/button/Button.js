@@ -9,18 +9,20 @@ border-radius: 8px;
 display: inline-block;
 margin: 15px;
 `
-const Label = styled.label`
-margin: 5px 15px;
-font-size: 0.8rem;
-`
-const Span = styled.span`
-margin-top: 15px;
-margin-left: 15px;
-`
+// const Label = styled.label`
+// margin: 5px 15px;
+// font-size: 0.8rem;
+// `
+// const Span = styled.span`
+// margin-top: 15px;
+// margin-left: 15px;
+// `
 
 class Button extends Component {
     render() {
-        const { hasError, disabled, labeldisplay, title } = this.props;
+        const { hasError, disabled, 
+            // labeldisplay, 
+            title } = this.props;
         return(
             <div className="button-wrapper"
             style={{ display: 'inline-block' }}>

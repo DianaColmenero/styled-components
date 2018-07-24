@@ -6,19 +6,21 @@ const StyledCheckbox = styled.input`
     margin: 8px;
   `;
 
-  const Label = styled.label`
-  margin: 5px 15px;
-  font-size: 0.8rem;
-  `
+//   const Label = styled.label`
+//   margin: 5px 15px;
+//   font-size: 0.8rem;
+//   `
   
-  const Span = styled.span`
-  margin-top: 15px;
-  margin-left: 15px;
-  `
+//   const Span = styled.span`
+//   margin-top: 15px;
+//   margin-left: 15px;
+//   `
 
 class Checkbox extends Component {
     render() {
-        const { hasError, disabled, labeldisplay, title } = this.props;
+        const { hasError, disabled, 
+            // labeldisplay, title 
+        } = this.props;
         return(
             <div className="check-wrapper"
             style={{ display: 'inline-block' }}>

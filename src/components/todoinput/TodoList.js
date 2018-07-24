@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TodoItem from './TodoItem';
-import Checkbox from './../checkbox/Checkbox';
+// import Checkbox from './../checkbox/Checkbox';
 // import Button from '../button/Button';
 import styled from 'styled-components';
 
