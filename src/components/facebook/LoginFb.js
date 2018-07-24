@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import GlobalContainer from './GlobalContainer';
-import FaFacebookOfficial from 'react-icons/lib/fa/facebook-official';
+// import FaFacebookOfficial from 'react-icons/lib/fa/facebook-official';
 // import Dashboard from '../dashboard/Dashboard';
 // import Button from './../button/Button';
 // import Input from './../input/Input';
 // import TodoList from './TodoList';
 // import {Link} from 'react-router-dom';
 // import { Redirect } from 'react-router-dom';
+import styled from 'styled-components';
+import WallFb from './WallFb';
+
+const TimeLineStyled = styled.div`
+	background: #e9ebee;
+`;
 
 class LoginFb extends Component {
     state = {
@@ -26,9 +32,26 @@ class LoginFb extends Component {
             name: response.name,
             picture: response.picture.data.url,
             redirect: true
-        },);
-        
-    }
+        },
+        () => {
+            this.setPosts();
+        }
+    );
+};
+    setPosts() {
+        if (this.state.isLoggedIn) {
+            fetch(
+                'https://graph.facebook.com/v3.0/820882001277849/posts?access_token=403108406768407|amJGwlHjGLWXcKOMow0MGmJpTgU'
+			)
+            .then(response => response.json())
+            .then(json => {
+                this.setState({ data: json.data });
+                console.log(json);
+            });
+            
+		}
+    };
+
 
     componentClicked = () => console.log('click');
     
@@ -47,48 +70,44 @@ class LoginFb extends Component {
                 //     <img src={this.state.picture} alt={this.state.name} />
                 // <h2>Welcome {this.state.name}</h2>
                 // Email: {this.state.email}
-                
+                <div>
                 <div className={'lol'} style={{
                     width: '99%',
                     height: '6vh',
                     background: '#4958A3',
-                    padding: '8px'
-                    
+                    padding: '8px'           
                 }}>
                 <img
                 style={{display:'inline-block', borderRadius: '50%'}} src={this.state.picture} alt={this.state.name} />
                 <span style={{display:'inline-block', color:'white'}}>{firstName}</span>
                 </div>
+               
+							<WallFb data={this.state.data} name={firstName} />
+				
+                </div>
+                
             );
         } else {
             fbContent = (
+                <div style={{ margin: 'auto', width: '700px' }}>
                 <FacebookLogin
     appId="272490939996928"
     autoLoad={true}
     fields="name,picture"
     onClick={this.componentClicked}
     callback={this.responseFacebook} />
+                </div>
             );
             
         }
 
         return (
             <div>
-                
-        <div>
-
-                {/* <h3>Log in to Facebook</h3> */}
-            {/* <form>
-                <label>Insert your email</label>
-                <Input/>
-                <label>Insert your password</label>
-                <Input type={'password'} />          
-            </form> */}
-            {fbContent}
-        </div>
-        <FaFacebookOfficial style={{float: 'left'}} />
+            <TimeLineStyled>{fbContent}</TimeLineStyled>
             <GlobalContainer
             />
+            
+
             </div>
         );
     }
