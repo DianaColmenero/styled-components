@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import GlobalContainer from './GlobalContainer';
-// import FaFacebookOfficial from 'react-icons/lib/fa/facebook-official';
-// import Dashboard from '../dashboard/Dashboard';
-// import Button from './../button/Button';
-// import Input from './../input/Input';
-// import TodoList from './TodoList';
-// import {Link} from 'react-router-dom';
-// import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 import WallFb from './WallFb';
+import Header from './Header'
+
 
 const TimeLineStyled = styled.div`
 	background: #e9ebee;
@@ -63,26 +58,13 @@ class LoginFb extends Component {
 		}
 
         let fbContent;
-
         if(this.state.isLoggedIn){
             // return <Redirect to="/wall" />
             fbContent = (
-                //     <img src={this.state.picture} alt={this.state.name} />
-                // <h2>Welcome {this.state.name}</h2>
-                // Email: {this.state.email}
+
                 <div>
-                <div className={'lol'} style={{
-                    width: '99%',
-                    height: '6vh',
-                    background: '#4958A3',
-                    padding: '8px'           
-                }}>
-                <img
-                style={{display:'inline-block', borderRadius: '50%'}} src={this.state.picture} alt={this.state.name} />
-                <span style={{display:'inline-block', color:'white'}}>{firstName}</span>
-                </div>
-               
-							<WallFb data={this.state.data} name={firstName} />
+                    <Header name={firstName} picture={this.state.picture} />
+                    <WallFb data={this.state.data} name={firstName} />
 				
                 </div>
                 
@@ -114,3 +96,5 @@ class LoginFb extends Component {
 }
 
 export default LoginFb;
+
+

@@ -8,7 +8,7 @@ import styled from 'styled-components';
 //Helpers
 // import { options } from './CardHelpers';
 
-export const StyledCard = styled.div`
+const StyledCard = styled.div`
 	min-height: 250px;
 	background: white;
 	padding: 2% 5%;
@@ -20,7 +20,7 @@ export const StyledCard = styled.div`
 	max-width: 500px;
 `;
 
-export const Img = styled.img`
+const Img = styled.img`
 	width: 100%;
 	height: auto;
 	display: block;
@@ -30,30 +30,30 @@ export const Img = styled.img`
 	margin-bottom: 40px;
 `;
 
-export const Text = styled.p`
+const Text = styled.p`
 	font-size: 0.9em;
 	text-align: left;
 	line-height: 25px;
 `;
 
-export const Options = styled.div`
+const Options = styled.div`
 	display: flex;
 	justify-content: space-between;
 	margin: 10px 0;
 `;
 
-export const OptionWrapper = styled.div`
+const OptionWrapper = styled.div`
 	color: #61676f;
 	font-size: 0.9em;
 	cursor: pointer;
 `;
 
-export const OptionText = styled.span`
+const OptionText = styled.span`
 	margin-left: 5px;
 	color: #61676f;
 `;
 
-export const InputWrapper = styled.div`
+const InputWrapper = styled.div`
 	margin: 10px 0;
 `;
 
@@ -108,7 +108,7 @@ class Card extends Component {
 						label="Insert your comment"
 						handleChange={this.handleChange}
 						title={this.state.text}
-						placeholder="Write a comment..."
+						
 					/>
 				</InputWrapper>
 			</StyledCard>

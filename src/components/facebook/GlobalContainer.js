@@ -7,7 +7,7 @@ class GlobalContainer extends Component {
             <div>
             <div className={'global-container'} style={{
                 width: '100%',
-                height: '91vh',
+                height: '2570vh',
                 background: '#E7E8EC',
             }}>
             </div>

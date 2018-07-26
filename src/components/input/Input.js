@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 const StyledInput = styled.input`
   padding: 0.5em;
-  color: blue;
-  background: papayawhip;
+//   color: blue;
+//   background: papayawhip;
   border: none;
   border-radius: 3px;
   margin: 15px;
@@ -27,8 +27,8 @@ const StyledInput = styled.input`
 class Input extends Component {
     render() {
         const { hasError, 
-            // title, 
-            placeholder, disabled,handleChange, 
+            // title,placeholder, 
+             disabled,handleChange, 
             // labeldisplay, value 
         } = this.props;
         return(
@@ -37,7 +37,8 @@ class Input extends Component {
             <StyledInput
             onChange={handleChange}
             style={{ borderColor: hasError !== true ? 'black' : 'red'}}
-            placeholder={placeholder}
+            // placeholder={placeholder}
+            placeholder="What are you thinking?"
             value={this.props.handleSubmit}
             disabled={disabled}
             />

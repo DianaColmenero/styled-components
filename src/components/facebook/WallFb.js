@@ -5,13 +5,11 @@ import Card from './card/Card';
 // import Left from './../Left/Left';
 import Composer from './Composer';
 import styled from 'styled-components';
-//Helper
 import { months, currentMonth, getDay, getExactDate } from './MainTimelineHelpers';
 
 const MainTimelineStyled = styled.div`
 	max-width: 100%;
 	width: 1000px;
-	margin: 60px auto 0 auto;
 `;
 
 const Middle = styled.div`
