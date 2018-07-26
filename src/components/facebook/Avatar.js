@@ -3,28 +3,28 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Name = styled.p`
-	font-size: 0.8em;
+	font-size: 0.8rem;
 	color: white;
-	margin-top: 0px;
-	padding-top: 15px;
+	padding: 4px;
 	text-align: left;
-	margin-left: 10px;
 	cursor: pointer;
-	margin-bottom: 15px;
+	margin: 10px 5px 10px 0;
 	display: inline;
+	border-right: 0.01em solid #3A3034;
+	height: 2vh;
+	padding-right: 7px;
 `;
 
 const Picture = styled.img`
 	border-radius: 50%;
 	height: 38px;
 	width: 38px;
-	margin-top: 3px;
+	margin-top: 4px;
 	
 `;
 
 const Wrapper = styled.div`
     display: flex;
-    margin: 10px;
 `;
 
 export default props => {
