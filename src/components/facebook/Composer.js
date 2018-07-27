@@ -17,12 +17,15 @@ const StyledComposer = styled.div`
 	margin-top: 60px;
 `;
 
+const 
+
 export default props => {
 	return (
 		<StyledComposer className="composer">
 			<Input 
 			handleChange={props.handleChange} 
 			value={props.value} name={props.name}
+
 			/>
 			{/* <Preview image={props.image} previewDisplay={props.previewDisplay} /> */}
 			{/* <UploadImage uploadImage={props.uploadImage} /> */}
