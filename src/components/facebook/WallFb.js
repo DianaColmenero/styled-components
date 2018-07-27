@@ -48,6 +48,7 @@ class WallFb extends Component {
 			: this.setState({ disabledButton: false, textareaValue: event.target.value });
 	};
 	handleClick = () => {
+		console.log('handleclick');
 		let newUserPosts = [...this.state.userPosts];
 		newUserPosts.unshift({ text: this.state.textareaValue, image: this.state.image });
 		this.setState({

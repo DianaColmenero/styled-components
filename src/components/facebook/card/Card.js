@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import IoHappy from 'react-icons/lib/io/happy';
 // import { faThumbsUp, faCommentAlt, faShare } from '@fortawesome/free-solid-svg-icons';
 // import { StyledCard, Img, Text, Options, OptionWrapper, OptionText, InputWrapper } from './CardStyled';
 //Components
 import Input from './../../input/Input';
 import styled from 'styled-components';
-//Helpers
 // import { options } from './CardHelpers';
 
 const StyledCard = styled.div`
-	min-height: 250px;
-	background: white;
-	padding: 2% 5%;
+	min-height: 20%;
+	background: #FFFFFF;
+	padding: 12px 12px 0;
 	margin-bottom: 15px;
 	display: inline-block;
-	border: 1px solid #dbdad8;
+	// border: 1px solid #DADBDE;
 	border-radius: 5px;
 	width: 100%;
 	max-width: 500px;
@@ -28,12 +27,20 @@ const Img = styled.img`
 	margin-right: auto;
 	margin-top: 30px;
 	margin-bottom: 40px;
+	background: yellow;
 `;
 
 const Text = styled.p`
-	font-size: 0.9em;
+	font-size: 14px;
 	text-align: left;
 	line-height: 25px;
+`;
+
+const circleWrapp = styled.div`
+	padding-bottom: 3px;
+	margin-right: 8px;
+	font-size: 2.4;
+	display: inline;
 `;
 
 const Options = styled.div`
@@ -61,54 +68,61 @@ class Card extends Component {
 	constructor() {
 		super();
 		this.state = {
-			name: 'Random',
 			text: '',
 			display: 'none',
+			name: 'Random',
 		};
 	}
+
+	pressed = () => {
+		console.log('pressed');
+	};
+
 	handleChange = event => {
+		console.log('change');
 		this.setState({ text: event.target.value });
 	};
 
-	showInput = () => {
+	commentInput = () => {
+		console.log('commentInput');
 		this.setState({ display: 'block' });
 	};
-	print = () => {
-		console.log('print');
-	};
+
 
 	render() {
+
 		const options = [
-			{ text: 'Like', action: this.print },
-			{ text: 'Comment', action: this.showInput },
-			{ text: 'Share', action: this.print },
+			{ text: 'Like', action: this.pressed },
+			{ text: 'Comment', action: this.commentInput },
+			{ text: 'Share', action: this.pressed },
 		];
+		
 		return (
-			<StyledCard>
-				<Text>
-					{this.props.month} {this.props.day}
-				</Text>
+			<StyledCard >
+				{/* <circleWrapp>
+				<IoHappy/>
+					</circleWrapp> */}
+				<Text className="texts">{this.props.month} {this.props.day}</Text>
 				<Text>{this.props.text}</Text>
 				<Img src={this.props.pic} alt="" />
 				<Options>
 					{options.map((element, index) => {
 						return (
-							<OptionWrapper key={index}>
+							<OptionWrapper className="optionwra" key={index}>
 								{/* <FontAwesomeIcon icon={element.icon} /> */}
 								<OptionText onClick={element.action}>{element.text}</OptionText>
 							</OptionWrapper>
 						);
 					})}
 				</Options>
-				<InputWrapper style={{ display: this.state.display }}>
+				<InputWrapper  style={{ display: this.state.display }}>
 					<Input
 						borderRadius="50px"
 						width="440px"
 						labelDisplay="none"
 						label="Insert your comment"
 						handleChange={this.handleChange}
-						title={this.state.text}
-						
+						title={this.state.text}		
 					/>
 				</InputWrapper>
 			</StyledCard>

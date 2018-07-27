@@ -19,7 +19,6 @@ class LoginFb extends Component {
     }
 
     responseFacebook = response => {
-        // console.log(response);
 
         this.setState({
             isLoggedIn: true,
