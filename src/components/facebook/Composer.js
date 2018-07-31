@@ -15,9 +15,9 @@ const StyledComposer = styled.div`
 	width: 100%;
 	max-width: 471px;
 	margin-top: 60px;
+	border: 1px solid #DADBDE;
+	margin-left: 4.5%;
 `;
-
-// const 
 
 export default props => {
 	return (

@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-// import { MainTimelineStyled, Middle } from './MainTimelineStyled';
 import Card from './card/Card';
-// import Right from './../Right/Right';
-// import Left from './../Left/Left';
 import Composer from './Composer';
 import styled from 'styled-components';
 import Clock from './Clock';
@@ -115,7 +112,6 @@ class WallFb extends Component {
 					{posts}
 					{data}
 				</Middle>
-				{/* <Right /> */}
 			</MainTimelineStyled>
 
 

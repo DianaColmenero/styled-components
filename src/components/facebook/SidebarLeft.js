@@ -6,13 +6,11 @@ import * as FontAwesome from 'react-icons/lib/fa'
 const ContainerLeft = styled.div`
 float: left;
 position: fixed;
-// min-height: 270px;
 width: 159px;
 padding: 0px 10px 0 15px;
 margin-top: 60px;
 color: black;
-// font-size: 0.9em;
-
+margin-left: 2.2%;
 `;
 
 const Asafe = styled.a`

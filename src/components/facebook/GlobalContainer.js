@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import SidebarRight from './SidebarRight';
+
 
 
 class GlobalContainer extends Component {
@@ -10,6 +12,8 @@ class GlobalContainer extends Component {
                 height: '2570vh',
                 background: '#E7E8EC',
             }}>
+            <SidebarRight />
+
             </div>
             </div>
         );

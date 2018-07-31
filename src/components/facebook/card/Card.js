@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import IoHappy from 'react-icons/lib/io/happy';
-// import { faThumbsUp, faCommentAlt, faShare } from '@fortawesome/free-solid-svg-icons';
-// import { StyledCard, Img, Text, Options, OptionWrapper, OptionText, InputWrapper } from './CardStyled';
-//Components
 import Input from './../../input/Input';
 import styled from 'styled-components';
-// import { options } from './CardHelpers';
+
 
 const StyledCard = styled.div`
 	min-height: 20%;
@@ -13,10 +9,11 @@ const StyledCard = styled.div`
 	padding: 12px 12px 0;
 	margin-bottom: 15px;
 	display: inline-block;
-	// border: 1px solid #DADBDE;
+	border: 1px solid #DADBDE;
 	border-radius: 5px;
 	width: 100%;
 	max-width: 500px;
+	margin-left: 4.5%;
 `;
 
 const Img = styled.img`
