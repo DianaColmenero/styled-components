@@ -17,7 +17,7 @@ const StyledComposer = styled.div`
 	margin-top: 60px;
 `;
 
-const 
+// const 
 
 export default props => {
 	return (

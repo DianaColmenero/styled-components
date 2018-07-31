@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Name, Picture, Wrapper } from './AvatarStyled';
 import styled from 'styled-components';
 
 const Name = styled.p`

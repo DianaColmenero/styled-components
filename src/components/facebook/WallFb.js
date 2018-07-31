@@ -5,7 +5,11 @@ import Card from './card/Card';
 // import Left from './../Left/Left';
 import Composer from './Composer';
 import styled from 'styled-components';
-import { months, currentMonth, getDay, getExactDate } from './MainTimelineHelpers';
+import Clock from './Clock';
+import SidebarLeft from './SidebarLeft';
+// import { months, currentMonth, getDay, getExactDate } from './MainTimelineHelpers';
+
+
 
 const MainTimelineStyled = styled.div`
 	max-width: 100%;
@@ -61,25 +65,28 @@ class WallFb extends Component {
 	};
 	render () {
 		let data;
-		let currentDay = getDay();
+		// let currentDay = getDay();
 		let posts = this.state.userPosts.map((post, index) => {
-			return <Card pic={post.image} text={post.text} key={index} month={months[currentMonth]} day={currentDay} />;
+			return <Card pic={post.image} text={post.text} key={index} 
+			// month={months[currentMonth]} day={currentDay} 
+			/>;
 		});
 		if (this.props.data) {
 			data = Object.keys(this.props.data).map((element, index) => {
-				let date = getExactDate(this.props.data[element].created_time);
-				let [day, month] = date;
+				// let date = getExactDate(this.props.data[element].created_time);
+				// let [day, month] = date;
 				if (this.props.data[element].message) {
 					return (
 						<div key={index}>
-							<Card
-								day={day}
-								month={month}
+								<Clock/>
+							<Card 
 								pic="https://source.unsplash.com/1600x900/?flowers"
 								id={this.props.data[element].id}
 								text={this.props.data[element].message}
 								labelDisplay="none"
-							/>
+								>
+								
+							</Card>
 						</div>
 					);
 				} else {
@@ -92,7 +99,7 @@ class WallFb extends Component {
 
 		return (
 			<MainTimelineStyled>
-				{/* <Left fullName={this.props.fullName} picture={this.props.picture} /> */}
+				<SidebarLeft fullName={this.props.fullName} picture={this.props.picture} />
 				<Middle>
 					<Composer
 						picture={this.props.picture}

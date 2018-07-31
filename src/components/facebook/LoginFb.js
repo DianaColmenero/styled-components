@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import GlobalContainer from './GlobalContainer';
-import styled from 'styled-components';
 import WallFb from './WallFb';
 import Header from './Header'
+import SidebarLeft from './SidebarLeft';
 
-
-const TimeLineStyled = styled.div`
-	background: #e9ebee;
-`;
 
 class LoginFb extends Component {
     state = {
@@ -58,12 +54,17 @@ class LoginFb extends Component {
 
         let fbContent;
         if(this.state.isLoggedIn){
-            // return <Redirect to="/wall" />
+            
             fbContent = (
-
+                
                 <div>
+
                     <Header name={firstName} picture={this.state.picture} />
-                    <WallFb data={this.state.data} name={firstName} />
+                    
+
+                    <WallFb data={this.state.data} />
+
+                <SidebarLeft fullname={this.state.name} picture={this.state.picture} />
 				
                 </div>
                 
@@ -81,10 +82,10 @@ class LoginFb extends Component {
             );
             
         }
-
+        
         return (
             <div>
-            <TimeLineStyled>{fbContent}</TimeLineStyled>
+            {fbContent}
             <GlobalContainer
             />
             
