@@ -51,7 +51,7 @@ display: inline-block;
 text-align: left;
 cursor: pointer;
 padding: 0 0 5px 5px;
-
+text-decoration:none;
 `;
 
 

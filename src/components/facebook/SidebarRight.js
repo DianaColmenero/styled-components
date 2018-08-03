@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import Stories from './Stories';
+import Publicity from './Publicity';
 // import Sponsor from './Sponsor';
 
 
@@ -8,7 +9,7 @@ const HistoriesWrapp = styled.div`
 float: right;
 position: fixed;
 width: 300px;
-min-height: 265px;
+min-height: 295;
 background: #fff;
 // overflow-y: scroll;
 border-radius: 5px;
@@ -20,15 +21,14 @@ margin-left: 69%;
 margin-top: 60px;
 `;
 
-const PageWrapp = styled.div`
+const PublicityWrapp = styled.div`
 float: right;
 position: fixed;
 width: 300px;
-min-height: 295px;
+min-height: 450px;
 background: #fff;
 margin-left: 69%;
-// overflow-y: scroll;
-margin-top: 360px;
+margin-top: 395px;
 border-radius: 5px;
 padding: 12px;
 border: 1px solid #DADBDE;
@@ -42,7 +42,9 @@ class SidebarRight extends Component {
             <Stories />
 
             </HistoriesWrapp>
-            <PageWrapp/>
+            <PublicityWrapp>
+                <Publicity />
+            </PublicityWrapp>
             
             {/* <Sponsor /> */}
             </div>

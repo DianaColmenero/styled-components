@@ -77,7 +77,7 @@ class WallFb extends Component {
 						<div key={index}>
 								<Clock/>
 							<Card 
-								pic="https://source.unsplash.com/1600x900/?flowers"
+								pic="https://source.unsplash.com/BSEifmkrBdE/1600x900"
 								id={this.props.data[element].id}
 								text={this.props.data[element].message}
 								labelDisplay="none"
